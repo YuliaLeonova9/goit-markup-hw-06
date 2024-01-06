@@ -199,14 +199,14 @@ gap: 40px;
 
 @media only screen and (max-width: 767.98px) {
 .header-info {
-        display: none;
+  display: none;
     } 
   }
 @media only screen and (min-width: 768px) {
   .header-info {
-          display: flex;
-            flex-direction: column;
-            gap: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   }
 }
 @media only screen and (min-width: 1158px) {
@@ -243,7 +243,7 @@ padding: 72px 0;
 background-image: linear-gradient(to bottom,
             rgba(46, 47, 66, 0.7),
             rgba(46, 47, 66, 0.7)),
-        url(../images/peopleoffice.jpg);
+        url(../images/Dark-bgpeopleofice_mob@1x.jpg);
 background-repeat: no-repeat;
 background-position: center;
 max-width: 1440px;
@@ -251,10 +251,31 @@ margin: 0 auto;
 background-size: cover
 }
 
+@media (min-resolution: 192dpi) {
+  .main-section {
+    background-image: linear-gradient(to bottom,
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)),
+        url(../images/Dark-bgpeopleofice_mob@2x.jpg);
+  }
+}
 
 @media only screen and (min-width: 768px) {
 .main-section  {
     padding: 112px 0;
+    background-image: linear-gradient(to bottom,
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)),
+        url(../images/peopleoffice_tab@1x.jpg);
+  }
+}
+
+@media only screen and (min-width: 768px) and (min-resolution: 192dpi) {
+.main-section {
+background-image: linear-gradient(to bottom,
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)),
+    url(../images/peopleoffice_tab@2x.jpg);
   }
 }
 
@@ -262,9 +283,20 @@ background-size: cover
 @media only screen and (min-width: 1158px) {
 .main-section {
     padding: 188px 0;
+    background-image: linear-gradient(to bottom,
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)),
+        url(../images/peopleoffice.jpg);
   }
 }
-
+@media only screen and (min-width: 1158px) and (min-resolution: 192dpi) {
+  .main-section {
+    background-image: linear-gradient(to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)),
+      url(../images/peopleofice2x.jpg);
+  }
+}
 
 .main-title {
 color: #FFF;
@@ -588,24 +620,16 @@ column-gap: 24px;
   }
 }
 
-.portfolio-list .item {
-/* width: calc((100% - 48px) / 3); */
-}
-
-
-
-@media only screen and (min-width: 1158px) {
-  .portfolio-list .item {
-    width: calc((100% - 48px) / 3);
-  }
-}
-
 @media only screen and (min-width: 768px) {
 .portfolio-list .item  {
     width: calc((100% - 24px) / 2);
   }
 }
-
+@media only screen and (min-width: 1158px) {
+  .portfolio-list .item {
+    width: calc((100% - 48px) / 3);
+  }
+}
 .portfolio-list .card-text {
 border: 1px solid #e7e9fc;
 border-top: none;
@@ -1040,7 +1064,7 @@ position: relative;
 .form-input {
 padding-left: 38px;
 outline: transparent;
-width: 360px;
+width: 100%;
 height: 40px;
 border-radius: 4px;
 background-color: transparent;
@@ -1198,6 +1222,8 @@ background: var(--OCEAN, #404BBF);
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  background-color: transparent;
+  border: none;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1207,17 +1233,25 @@ background: var(--OCEAN, #404BBF);
 }
 
 
-/* .mobile-menu {
+.mobile-menu {
   position: fixed;
   top: 0;
   left: 0;
- 
+  display: flex;
+  flex-direction: column;
  
   width: 100%;
   height: 100%;
   padding: 72px 16px 40px;
   background-color: #FFF;
+  transform: translateX(-100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.mobile-menu.is-open {
+  transform: translateX(0);
+}
+
 .mobile-menu-list {
   margin-bottom: auto;
 }
@@ -1229,6 +1263,22 @@ background: var(--OCEAN, #404BBF);
   border-radius: 50%;
   width: 100%;
   height: 100%;
+}
+.menu-mobile {
+  position: absolute;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobile-menu-link{
@@ -1288,7 +1338,7 @@ color: #F4F4FD;
 width: 40px;
 height: 40px;
   
-} */
+}
 
 
 
