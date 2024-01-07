@@ -46,7 +46,12 @@ box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
 display: flex;
 justify-content: space-between;
 }
+@media only screen and (min-width: 768px) {
+  .header-container {
+    align-items: center;
 
+  }
+}
 
 .container {
 max-width: 320px ;
@@ -194,7 +199,6 @@ color: #404bbf;
 display: flex;
 align-items: center;
 gap: 40px;
-
 }
 
 @media only screen and (max-width: 767.98px) {
@@ -243,7 +247,7 @@ padding: 72px 0;
 background-image: linear-gradient(to bottom,
             rgba(46, 47, 66, 0.7),
             rgba(46, 47, 66, 0.7)),
-        url(../images/Dark-bgpeopleofice_mob@1x.jpg);
+        url(../images/peopleofice_mob@1x.jpg);
 background-repeat: no-repeat;
 background-position: center;
 max-width: 1440px;
@@ -256,7 +260,7 @@ background-size: cover
     background-image: linear-gradient(to bottom,
           rgba(46, 47, 66, 0.7),
           rgba(46, 47, 66, 0.7)),
-        url(../images/Dark-bgpeopleofice_mob@2x.jpg);
+        url(../images/peopleofice_mob@2x.jpg);
   }
 }
 
@@ -379,11 +383,7 @@ row-gap: 72px;
 justify-content: center;
 flex-direction: column;
 }
-@media only screen and (min-width: 1158px) {
-.features-list {
-   flex-direction: row;
-  }
-}
+
 
 @media only screen and (min-width: 768px) {
   .features-list {
@@ -391,13 +391,19 @@ flex-direction: column;
     flex-wrap: wrap;
   }
 }
+@media only screen and (min-width: 1158px) {
+  .features-list {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
 
 .features-item {
-width: 264px;
+/* width: 264px; */
 }
 @media only screen and (min-width: 768px) {
   .features-item {
-    width: calc((100%-24px)/2);
+    width: calc((100% - 24px)/2);
   }
 }
 /* svg */
@@ -466,7 +472,7 @@ font-weight: 500;
 /* img */
 .section-img {
 background-color: #F4F4FD;
-box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+
 }
 
 .title-img {
@@ -555,12 +561,18 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 .socials {
 display: flex;
-justify-content: center;
+/* justify-content: center; */
 align-items: center;
 margin-top: 8px;
 gap: 24px;
 }
-
+.socials-center {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+    gap: 24px;
+}
 
 .socials-link {
 display: flex;
@@ -628,6 +640,7 @@ column-gap: 24px;
 @media only screen and (min-width: 1158px) {
   .portfolio-list .item {
     width: calc((100% - 48px) / 3);
+    box-shadow: none;
   }
 }
 .portfolio-list .card-text {
@@ -644,6 +657,7 @@ box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47,
 
 .item {
 transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
 
@@ -710,7 +724,9 @@ padding: 96px 0;
 display: flex;
 flex-direction: column;
 gap: 72px;
-align-items: center;
+align-items: flex-start;
+justify-content: center;
+  align-items: center;
 /* align-items: baseline; */
 }
 
@@ -1148,6 +1164,7 @@ font-size: 12px;
 line-height: 1.17;
 letter-spacing: 0.04em;
 color: #8e8f99;
+display: flex;
 }
 
 .item-chec.visually-hidden:focus+.form-label-checkbox>.checkbox-icon-box {
@@ -1174,6 +1191,7 @@ fill: transparent;
 transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
         border 250ms cubic-bezier(0.4, 0, 0.2, 1),
         fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        flex-shrink: 0;
 }
 
 /* .form-input-checkbox:checked+.checkbox-icon-box {
